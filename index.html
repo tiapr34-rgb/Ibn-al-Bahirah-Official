@@ -26,10 +26,8 @@
       --hero-bg: radial-gradient(circle at center, rgba(212,175,55,0.15) 0%, transparent 70%);
       --card-border: rgba(212, 175, 55, 0.25);
       --timeline-dot: #d4af37;
-      --mood-transition: 0.6s ease;
       --font-heading: 'Playfair Display', 'Cairo', serif;
     }
-    /* أوضاع المزاج */
     body.mood-morning {
       --bg-primary: #0d0b06;
       --bg-card: rgba(30, 25, 10, 0.8);
@@ -70,30 +68,23 @@
       --timeline-dot: #ff6b4a;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
     body {
       font-family: 'Cairo', 'El Messiri', sans-serif;
       background: var(--bg-primary);
       color: var(--text-primary);
       line-height: 1.8;
       overflow-x: hidden;
-      transition: background var(--mood-transition), color var(--mood-transition);
+      transition: background 0.6s ease, color 0.6s ease;
     }
     #particles-canvas {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-      pointer-events: none;
+      top: 0; left: 0; width: 100%; height: 100%;
+      z-index: 0; pointer-events: none;
     }
     .cursor-glow {
       position: fixed;
-      width: 500px;
-      height: 500px;
+      width: 500px; height: 500px;
       border-radius: 50%;
       background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
       opacity: 0.04;
@@ -106,9 +97,7 @@
       position: fixed;
       top: 0; left: 0; width: 100%; height: 100%;
       background: #000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: flex; align-items: center; justify-content: center;
       z-index: 10000;
       pointer-events: auto;
       cursor: pointer;
@@ -126,16 +115,9 @@
       margin: 1rem 0;
     }
     .intro-sub { font-size: 1.4rem; color: #c9a84c; letter-spacing: 5px; animation: fadeInUp 1s 0.5s both; }
-    @keyframes floatCrown {
-      0%,100% { transform: translateY(0); }
-      50% { transform: translateY(-15px); }
-    }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(40px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+    @keyframes floatCrown { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
 
-    /* Header & Monogram */
     .main-header {
       position: fixed;
       top: 0; right: 0;
@@ -147,10 +129,7 @@
       width: 100%;
       pointer-events: none;
     }
-    .monogram-container {
-      position: relative;
-      pointer-events: auto;
-    }
+    .monogram-container { position: relative; pointer-events: auto; }
     .monogram-svg {
       width: 65px; height: 65px;
       filter: drop-shadow(0 0 18px rgba(212,175,55,0.5));
@@ -158,14 +137,8 @@
       transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       cursor: pointer;
     }
-    .monogram-container:hover .monogram-svg {
-      transform: scale(1.25) rotate(5deg);
-      animation: none;
-    }
-    @keyframes breathe {
-      0%,100% { transform: scale(1); }
-      50% { transform: scale(1.07); }
-    }
+    .monogram-container:hover .monogram-svg { transform: scale(1.25) rotate(5deg); animation: none; }
+    @keyframes breathe { 0%,100% { transform: scale(1); } 50% { transform: scale(1.07); } }
     .monogram-nav {
       position: absolute;
       top: 80px; left: 50%;
@@ -180,23 +153,9 @@
       white-space: nowrap;
       box-shadow: 0 20px 45px rgba(0,0,0,0.7);
     }
-    .monogram-container:hover .monogram-nav {
-      opacity: 1; visibility: visible;
-      transform: translateX(-50%) translateY(0);
-    }
-    .monogram-nav ul {
-      list-style: none;
-      display: flex;
-      gap: 2rem;
-    }
-    .monogram-nav a {
-      color: var(--text-primary);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1.1rem;
-      letter-spacing: 1px;
-      transition: color 0.3s;
-    }
+    .monogram-container:hover .monogram-nav { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+    .monogram-nav ul { list-style: none; display: flex; gap: 2rem; }
+    .monogram-nav a { color: var(--text-primary); text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: color 0.3s; }
     .monogram-nav a:hover { color: var(--accent); }
 
     .mood-btn {
@@ -212,35 +171,27 @@
       transition: all 0.3s;
       font-size: 1rem;
     }
-    .mood-btn:hover {
-      background: var(--accent);
-      color: #000;
-      border-color: var(--accent);
-    }
+    .mood-btn:hover { background: var(--accent); color: #000; border-color: var(--accent); }
 
     .main-content { position: relative; z-index: 10; }
 
-    /* Hero */
     .hero {
       min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: flex; align-items: center; justify-content: center;
       text-align: center;
       padding: 6rem 2rem 2rem;
       background: var(--hero-bg);
-      transition: background var(--mood-transition);
+      transition: background 0.6s ease;
     }
     .hero-inner { max-width: 900px; animation: fadeInUp 1s ease-out; }
-    .crown-main { font-size: 6rem; filter: drop-shadow(0 0 50px var(--accent)); animation: floatCrown 3s infinite; }
+    .crown-main { font-size: 6rem; filter: drop-shadow(0 0 50px var(--accent)); animation: floatCrown 3s infinite; cursor: pointer; }
     h1 {
       font-family: var(--font-heading);
       font-size: clamp(3rem, 8vw, 6.5rem);
       font-weight: 700;
       background: linear-gradient(180deg, #fdf0b0, var(--accent), var(--accent2));
       -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-      letter-spacing: 3px;
-      line-height: 1.2;
+      letter-spacing: 3px; line-height: 1.2;
       filter: drop-shadow(0 8px 20px rgba(0,0,0,0.6));
       margin-bottom: 0.3rem;
     }
@@ -260,15 +211,9 @@
       padding: 2.5rem 2rem;
       margin: 1.5rem 0;
       box-shadow: 0 30px 60px rgba(0,0,0,0.5);
-      transition: all 0.5s cubic-bezier(0.25,0.8,0.25,1.2), background var(--mood-transition), border var(--mood-transition);
-      position: relative;
-      overflow: hidden;
+      transition: all 0.5s cubic-bezier(0.25,0.8,0.25,1.2), background 0.6s ease, border 0.6s ease;
     }
-    .luxury-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 40px 80px rgba(212,175,55,0.2);
-      border-color: var(--accent);
-    }
+    .luxury-card:hover { transform: translateY(-8px); box-shadow: 0 40px 80px rgba(212,175,55,0.2); border-color: var(--accent); }
     .card-badge {
       display: inline-block;
       background: linear-gradient(135deg, var(--accent), var(--accent2));
@@ -278,7 +223,6 @@
       font-weight: 700;
       letter-spacing: 2px;
       margin-bottom: 1.2rem;
-      text-transform: uppercase;
     }
     .highlight-gold { color: var(--accent); font-weight: 700; }
     .love-arab {
@@ -288,14 +232,10 @@
       background: linear-gradient(135deg, #f7e08a, var(--accent), #f7e08a);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
       margin: 1.5rem 0;
-      letter-spacing: 3px;
       animation: shimmerText 3s ease-in-out infinite;
       filter: drop-shadow(0 0 25px var(--accent));
     }
-    @keyframes shimmerText {
-      0%,100% { filter: drop-shadow(0 0 25px var(--accent)); }
-      50% { filter: drop-shadow(0 0 45px rgba(255,223,120,0.9)); }
-    }
+    @keyframes shimmerText { 0%,100% { filter: drop-shadow(0 0 25px var(--accent)); } 50% { filter: drop-shadow(0 0 45px rgba(255,223,120,0.9)); } }
 
     .section-padding { padding: 4rem 1.5rem; max-width: 1000px; margin: 0 auto; position: relative; z-index: 5; }
     .section-title {
@@ -308,168 +248,114 @@
       -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
       letter-spacing: 2px;
     }
-    .section-title::after {
-      content: '';
-      display: block;
-      width: 100px; height: 3px;
-      background: linear-gradient(90deg, transparent, var(--accent), transparent);
-      margin: 1rem auto 0;
-    }
+    .section-title::after { content: ''; display: block; width: 100px; height: 3px; background: linear-gradient(90deg, transparent, var(--accent), transparent); margin: 1rem auto 0; }
 
-    /* Timeline سينمائي */
-    .timeline {
-      position: relative;
-      padding: 2rem 0;
-    }
-    .timeline::before {
-      content: '';
-      position: absolute;
-      right: 50%;
-      top: 0;
-      bottom: 0;
-      width: 3px;
-      background: linear-gradient(180deg, transparent, var(--accent), transparent);
-      transform: translateX(50%);
-      border-radius: 2px;
-    }
-    .timeline-item {
-      display: flex;
-      align-items: center;
-      margin-bottom: 3rem;
-      opacity: 0;
-      transform: translateY(40px);
-      transition: all 0.8s cubic-bezier(0.25,0.8,0.25,1.2);
-      position: relative;
-    }
-    .timeline-item.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .timeline-content {
-      background: var(--bg-card);
-      backdrop-filter: blur(20px);
-      border: 1px solid var(--card-border);
-      border-radius: 20px;
-      padding: 1.8rem;
-      width: 45%;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.4);
-      transition: all 0.4s;
-      position: relative;
-    }
-    .timeline-content:hover {
-      transform: scale(1.03);
-      border-color: var(--accent);
-    }
+    .timeline { position: relative; padding: 2rem 0; }
+    .timeline::before { content: ''; position: absolute; right: 50%; top: 0; bottom: 0; width: 3px; background: linear-gradient(180deg, transparent, var(--accent), transparent); transform: translateX(50%); border-radius: 2px; }
+    .timeline-item { display: flex; align-items: center; margin-bottom: 3rem; opacity: 0; transform: translateY(40px); transition: all 0.8s; position: relative; }
+    .timeline-item.visible { opacity: 1; transform: translateY(0); }
+    .timeline-content { background: var(--bg-card); backdrop-filter: blur(20px); border: 1px solid var(--card-border); border-radius: 20px; padding: 1.8rem; width: 45%; box-shadow: 0 15px 35px rgba(0,0,0,0.4); transition: all 0.4s; }
+    .timeline-content:hover { transform: scale(1.03); border-color: var(--accent); }
     .timeline-item:nth-child(odd) .timeline-content { margin-right: auto; }
     .timeline-item:nth-child(even) .timeline-content { margin-left: auto; }
-    .timeline-year {
-      font-size: 1.8rem;
-      font-weight: 900;
-      color: var(--accent);
-      font-family: var(--font-heading);
-    }
-    .timeline-img {
-      width: 100%;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 12px;
-      margin: 1rem 0;
-      filter: brightness(0.8) sepia(0.3);
-      transition: filter 0.4s;
-    }
-    .timeline-content:hover .timeline-img {
-      filter: brightness(1) sepia(0);
-    }
-    .timeline-dot {
-      width: 20px; height: 20px;
-      background: var(--timeline-dot);
-      border-radius: 50%;
-      position: absolute;
-      top: 30px;
-      right: 50%;
-      transform: translateX(50%);
-      box-shadow: 0 0 20px var(--accent);
-      z-index: 2;
-    }
+    .timeline-year { font-size: 1.8rem; font-weight: 900; color: var(--accent); font-family: var(--font-heading); }
+    .timeline-img { width: 100%; height: 150px; object-fit: cover; border-radius: 12px; margin: 1rem 0; filter: brightness(0.8) sepia(0.3); transition: filter 0.4s; }
+    .timeline-content:hover .timeline-img { filter: brightness(1) sepia(0); }
+    .timeline-dot { width: 20px; height: 20px; background: var(--timeline-dot); border-radius: 50%; position: absolute; top: 30px; right: 50%; transform: translateX(50%); box-shadow: 0 0 20px var(--accent); z-index: 2; }
 
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 1.8rem;
-    }
-    .service-box {
-      background: var(--bg-card);
-      backdrop-filter: blur(15px);
-      border: 1px solid var(--card-border);
-      border-radius: 24px;
-      padding: 2rem 1.5rem;
-      text-align: center;
-      transition: all 0.4s cubic-bezier(0.25,0.8,0.25,1.2);
-    }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.8rem; }
+    .service-box { background: var(--bg-card); backdrop-filter: blur(15px); border: 1px solid var(--card-border); border-radius: 24px; padding: 2rem 1.5rem; text-align: center; transition: all 0.4s; }
     .service-box:hover { border-color: var(--accent); transform: translateY(-10px); }
     .service-icon { font-size: 3rem; color: var(--accent); margin-bottom: 1rem; }
 
     .social-links { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin: 2rem 0; }
-    .social-btn {
-      display: flex; align-items: center; gap: 0.7rem;
-      background: rgba(255,255,255,0.05);
-      backdrop-filter: blur(10px);
-      padding: 1rem 2.2rem;
-      border-radius: 50px;
-      text-decoration: none;
-      color: var(--text-primary);
-      font-size: 1.2rem;
-      font-weight: 600;
-      border: 1px solid var(--card-border);
-      transition: all 0.4s;
-    }
+    .social-btn { display: flex; align-items: center; gap: 0.7rem; background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); padding: 1rem 2.2rem; border-radius: 50px; text-decoration: none; color: var(--text-primary); font-size: 1.2rem; font-weight: 600; border: 1px solid var(--card-border); transition: all 0.4s; }
     .social-btn:hover { transform: translateY(-5px); color: #000; }
     .social-btn.telegram:hover { background: #0088cc; border-color: #0088cc; }
     .social-btn.youtube:hover { background: #cc0000; border-color: #cc0000; }
     .social-btn.whatsapp:hover { background: #1ebc5c; border-color: #1ebc5c; }
 
-    .egypt-flag-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 1rem;
-      margin: 1.5rem 0;
-    }
-    .flag-stripes {
-      width: 180px;
-      height: 100px;
-      background: linear-gradient(180deg, #CE1126 33.33%, #FFFFFF 33.33%, #FFFFFF 66.66%, #000000 66.66%);
-      border: 2px solid #c9a84c;
-      border-radius: 4px;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .flag-eagle {
-      font-size: 2.5rem;
-      color: #c9a84c;
-      filter: drop-shadow(0 0 5px black);
-    }
+    .egypt-flag-container { display: flex; justify-content: center; align-items: center; gap: 1rem; margin: 1.5rem 0; }
+    .flag-stripes { width: 180px; height: 100px; background: linear-gradient(180deg, #CE1126 33.33%, #FFFFFF 33.33%, #FFFFFF 66.66%, #000000 66.66%); border: 2px solid #c9a84c; border-radius: 4px; position: relative; display: flex; align-items: center; justify-content: center; }
+    .flag-eagle { font-size: 2.5rem; color: #c9a84c; filter: drop-shadow(0 0 5px black); }
 
     .signature-section { text-align: center; padding: 2.5rem 1rem; }
     .signature-svg { width: 320px; height: 120px; }
-    .sig-path {
-      fill: none; stroke: var(--accent); stroke-width: 3;
-      stroke-dasharray: 900; stroke-dashoffset: 900;
-      animation: drawSignature 4.5s forwards;
-    }
+    .sig-path { fill: none; stroke: var(--accent); stroke-width: 3; stroke-dasharray: 900; stroke-dashoffset: 900; animation: drawSignature 4.5s forwards; }
     @keyframes drawSignature { to { stroke-dashoffset: 0; } }
 
-    .footer-luxury {
-      text-align: center;
-      padding: 2rem;
-      background: rgba(0,0,0,0.7);
-      backdrop-filter: blur(10px);
-      color: #9a8b6e;
-      border-top: 1px solid var(--card-border);
-    }
+    .footer-luxury { text-align: center; padding: 2rem; background: rgba(0,0,0,0.7); backdrop-filter: blur(10px); color: #9a8b6e; border-top: 1px solid var(--card-border); }
 
+    /* غرفة الأسرار الرقمية */
+    #sanctum-overlay {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.92);
+      backdrop-filter: blur(15px);
+      z-index: 100000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    #sanctum-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    .sanctum-content {
+      text-align: center;
+      max-width: 700px;
+      padding: 2rem;
+      background: rgba(20,20,20,0.6);
+      border: 2px solid var(--accent);
+      border-radius: 40px;
+      box-shadow: 0 0 100px rgba(212,175,55,0.5);
+      position: relative;
+    }
+    .sanctum-title {
+      font-family: var(--font-heading);
+      font-size: 2.8rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      animation: floatCrown 4s infinite;
+    }
+    .sanctum-gallery {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin: 1.5rem 0;
+    }
+    .sanctum-gallery img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 15px;
+      border: 2px solid var(--accent);
+      filter: brightness(0.9);
+      transition: transform 0.4s;
+    }
+    .sanctum-gallery img:hover {
+      transform: scale(1.15) rotate(2deg);
+      filter: brightness(1.2);
+    }
+    .close-sanctum {
+      background: transparent;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      padding: 0.8rem 2rem;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 1rem;
+      transition: all 0.3s;
+    }
+    .close-sanctum:hover {
+      background: var(--accent);
+      color: #000;
+    }
     @media (max-width: 768px) {
       .timeline::before { right: 20px; }
       .timeline-content { width: 80%; }
@@ -523,27 +409,14 @@
     </div>
   </div>
 
-  <div class="main-content">
-    <main>
-      <section class="hero" id="hero">
-        <div class="hero-inner">
-          <span class="crown-main">👑</span>
-          <h1>ملك مونتاج</h1>
-          <p class="subtitle-main">ابن البحيره</p>
-          <div class="luxury-card">
-            <span class="card-badge">⚜️عربي وطن في اقوى  مطور ⚜️</span>
-            <p style="font-size:1.8rem; color:var(--accent); font-weight:700;">مطور مواقع & إيديتور محترف</p>
-            <p id="heroCustomMsg" style="font-size:1.3rem; color:var(--text-primary);">أنا بحب شغلي جداً ❤️</p>
-          </div>
-          <div class="love-arab">I ♥ the Arab world</div>
-        </div>
-      </section>
-
-      <section class="section-padding" id="timeline">
-        <h2 class="section-title">🎬 مسيرتي السينمائية</h2>
-        <div class="timeline">
-          <div class="timeline-item"><div class="timeline-dot"></div>
-            <div class="timeline-content"><span class="timeline-year">2018</span><h3>بداية الشغف</h3><p>اكتشفت عالم المونتاج وأنا في سن صغيرة، وبدأت أتعلم أساسيات الإبداع البصري.</p><img class="timeline-img" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='150'%3E%3Crect fill='%23333' width='300' height='150'/%3E%3Ctext fill='%23d4af37' x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-size='20'%3E🎥 بداية الشغف%3C/text%3E%3C/svg%3E" alt="بداية"></div>
-          </div>
-          <div class="timeline-item"><div class="timeline-dot"></div>
-            <div class="timeline-content"><span class="timeline-year">2020</span><h3>احتراف التطوير</h3><p>دخلت عا
+  <!-- غرفة الأسرار الرقمية -->
+  <div id="sanctum-overlay">
+    <div class="sanctum-content">
+      <div class="sanctum-title">🔮 غرفة الأسرار الرقمية</div>
+      <p style="color:var(--text-primary); font-size:1.3rem; margin-bottom:1rem;">مرحباً بك في ملاذي الخاص... هنا حيث يلتقي الإبداع بالغموض.</p>
+      <div class="sanctum-gallery">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Crect fill='%23333' width='100' height='100'/%3E%3Ctext fill='%23d4af37' x='50' y='55' text-anchor='middle'%3E🎬%3C/text%3E%3C/svg%3E" alt="عمل 1">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Crect fill='%23333' width='100' height='100'/%3E%3Ctext fill='%23d4af37' x='50' y='55' text-anchor='middle'%3E💻%3C/text%3E%3C/svg%3E" alt="عمل 2">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Crect fill='%23333' width='100' height='100'/%3E%3Ctext fill='%23d4af37' x='50' y='55' text-anchor='middle'%3E👑%3C/text%3E%3C/svg%3E" alt="عمل 3">
+      </div>
+      <p style="color:var(--accent); font-style:
