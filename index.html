@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+  <title>👑 ملك مونتاج ابن البحيره | مطور مواقع وإيديتور محترف</title>
+  <meta name="description" content="ملك مونتاج ابن البحيره - مطور مواقع وإيديتور محترف. فخامة، إتقان، وإبداع بلا حدود. جميع خدمات المونتاج وتصميم المواقع.">
+  <meta name="keywords" content="مونتاج, تطوير مواقع, ابن البحيره, مصر, مونتاج فيديو, تصميم مواقع, محرر فيديو, فخامة">
+  <meta name="author" content="ابن البحيره">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Playfair+Display:ital,wght@0,600;0,700;1,500&family=El+Messiri:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Cairo', 'El Messiri', sans-serif;
+      background: #050508;
+      color: #f0e6d3;
+      line-height: 1.8;
+      overflow-x: hidden;
+      -webkit-tap-highlight-color: transparent;
+      cursor: default;
+    }
+    /* خلفية الجسيمات الذهبية */
+    #particles-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+    /* وميض المؤشر الفاخر */
+    .cursor-glow {
+      position: fixed;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.06) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 1;
+      transform: translate(-50%, -50%);
+      transition: opacity 0.3s;
+      will-change: left, top;
+    }
+    /* ستارة الدخول المهيبة */
+    #intro-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10000;
+      pointer-events: auto;
+      cursor: pointer;
+      transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.8s;
+    }
+    #intro-overlay.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    .intro-content {
+      text-align: center;
+      padding: 2rem;
+    }
+    .intro-crown {
+      font-size: 6rem;
+      animation: floatCrown 2s ease-in-out infinite;
+      display: block;
+      filter: drop-shadow(0 0 40px rgba(212, 175, 55, 0.9));
+    }
+    .intro-title {
+      font-family: 'Playfair Display', 'Cairo', serif;
+      font-size: clamp(3rem, 10vw, 6rem);
+      font-weight: 700;
+      background: linear-gradient(180deg, #f7e08a 0%, #d4af37 40%, #aa7c11 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: 2px;
+      margin: 1rem 0;
+      text-shadow: none;
+      filter: drop-shadow(0 0 25px rgba(212, 175, 55, 0.5));
+    }
+    .intro-sub {
+      font-size: 1.4rem;
+      color: #c9a84c;
+      letter-spacing: 5px;
+      font-weight: 300;
+      animation: fadeInUp 1s ease 0.5s both;
+      font-family: 'El Messiri', sans-serif;
+    }
+    @keyframes floatCrown {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      25% { transform: translateY(-15px) rotate(2deg); }
+      75% { transform: translateY(-5px) rotate(-2deg); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    /* المحتوى الرئيسي */
+    .main-content {
+      position: relative;
+      z-index: 10;
+      opacity: 1;
+      transition: opacity 0.6s;
+    }
+    /* الزخارف الجانبية */
+    .ornament-left, .ornament-right {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 5rem;
+      color: rgba(212, 175, 55, 0.08);
+      z-index: 0;
+      pointer-events: none;
+      font-family: 'Playfair Display', serif;
+      letter-spacing: 10px;
+      user-select: none;
+    }
+    .ornament-left {
+      left: 2%;
+      writing-mode: vertical-rl;
+    }
+    .ornament-right {
+      right: 2%;
+      writing-mode: vertical-lr;
+    }
+    /* الهيرو */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      position: relative;
+    }
+    .hero-inner {
+      max-width: 900px;
+      animation: fadeInUp 1s ease-out;
+      position: relative;
+    }
+    .crown-main {
+      font-size: 6rem;
+      filter: drop-shadow(0 0 50px rgba(212, 175, 55, 0.7));
+      animation: floatCrown 3s ease-in-out infinite;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    h1 {
+      font-family: 'Playfair Display', 'Cairo', serif;
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      font-weight: 700;
+      background: linear-gradient(180deg, #fdf0b0 0%, #d4af37 30%, #8b6914 80%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: 3px;
+      line-height: 1.2;
+      filter: drop-shadow(0 8px 20px rgba(0,0,0,0.6));
+      margin-bottom: 0.3rem;
+    }
+    .subtitle-main {
+      font-size: clamp(1.4rem, 3vw, 2.2rem);
+      color: #c9a84c;
+      font-weight: 500;
+      letter-spacing: 6px;
+      margin-bottom: 2.5rem;
+      font-family: 'El Messiri', sans-serif;
+      text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+    }
+    /* البطاقة الزجاجية الفاخرة */
+    .luxury-card {
+      background: rgba(20, 18, 14, 0.7);
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      border-radius: 28px;
+      padding: 2.5rem 2rem;
+      margin: 1.5rem 0;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.05);
+      transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1.2);
+      position: relative;
+      overflow: hidden;
+    }
+    .luxury-card::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(45deg, #d4af37, #f7e08a, #d4af37, #aa7c11);
+      border-radius: 30px;
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.5s;
+      filter: blur(10px);
+    }
+    .luxury-card:hover::before {
+      opacity: 0.4;
+    }
+    .luxury-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 40px 80px rgba(212, 175, 55, 0.2);
+      border-color: rgba(212, 175, 55, 0.6);
+    }
+    .card-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #d4af37, #8b6914);
+      color: #000;
+      padding: 0.3rem 1.8rem;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 2px;
+      margin-bottom: 1.2rem;
+      text-transform: uppercase;
+      box-shadow: 0 5px 20px rgba(212, 175, 55, 0.4);
+    }
+    .highlight-gold {
+      color: #d4af37;
+      font-weight: 700;
+      text-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+    }
+    .highlight-white {
+      color: #fff;
+      font-weight: 700;
+    }
+    /* قسم أحب العالم العربي */
+    .love-arab {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 700;
+      background: linear-gradient(135deg, #f7e08a, #d4af37, #f7e08a);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin: 1.5rem 0;
+      letter-spacing: 3px;
+      animation: shimmerText 3s ease-in-out infinite;
+      filter: drop-shadow(0 0 25px rgba(212, 175, 55, 0.6));
+      text-align: center;
+    }
+    @keyframes shimmerText {
+      0%, 100% { filter: drop-shadow(0 0 25px rgba(212, 175, 55, 0.6)); }
+      50% { filter: drop-shadow(0 0 45px rgba(255, 223, 120, 0.9)); }
+    }
+    /* الأقسام */
+    .section-padding {
+      padding: 4rem 1.5rem;
+      max-width: 1000px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 5;
+    }
+    .section-title {
+      font-family: 'Playfair Display', 'Cairo', serif;
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 2.5rem;
+      background: linear-gradient(180deg, #fdf0b0, #d4af37);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: 2px;
+      position: relative;
+    }
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 100px;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #d4af37, transparent);
+      margin: 1rem auto 0;
+      border-radius: 2px;
+    }
+    .gold-text {
+      color: #d4af37;
+      font-weight: 700;
+    }
+    /* شبكة الخدمات */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.8rem;
+      margin-top: 1rem;
+    }
+    .service-box {
+      background: rgba(20, 18, 14, 0.55);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      border-radius: 24px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1.2);
+      position: relative;
+      overflow: hidden;
+    }
+    .service-box:hover {
+      border-color: #d4af37;
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 25px 50px rgba(212, 175, 55, 0.25);
+      background: rgba(30, 25, 15, 0.75);
+    }
+    .service-icon {
+      font-size: 3rem;
+      color: #d4af37;
+      margin-bottom: 1rem;
+      filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.5));
+      transition: transform 0.4s;
+    }
+    .service-box:hover .service-icon {
+      transform: scale(1.2) rotate(5deg);
+    }
+    .service-box h3 {
+      font-size: 1.3rem;
+      color: #f0e6d3;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+    .service-box p {
+      color: #b8a88a;
+      font-size: 0.95rem;
+    }
+    /* أزرار التواصل */
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin: 2rem 0 1rem;
+    }
+    .social-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      background: rgba(212, 175, 55, 0.08);
+      backdrop-filter: blur(10px);
+      padding: 1rem 2.2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      color: #f0e6d3;
+      font-size: 1.2rem;
+      font-weight: 600;
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1.2);
+      letter-spacing: 1px;
+    }
+    .social-btn i {
+      font-size: 1.6rem;
+      transition: transform 0.3s;
+    }
+    .social-btn:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+      color: #000;
+      font-weight: 700;
+    }
+    .social-btn:hover i {
+      transform: scale(1.3);
+    }
+    .social-btn.telegram:hover {
+      background: #0088cc;
+      border-color: #0088cc;
+      box-shadow: 0 15px 35px rgba(0,136,204,0.5);
+    }
+    .social-btn.youtube:hover {
+      background: #cc0000;
+      border-color: #cc0000;
+      box-shadow: 0 15px 35px rgba(204,0,0,0.5);
+    }
+    .social-btn.whatsapp:hover {
+      background: #1ebc5c;
+      border-color: #1ebc5c;
+      box-shadow: 0 15px 35px rgba(30,188,92,0.5);
+    }
+    /* قسم حب العرب */
+    .patriotic-section {
+      text-align: center;
+      padding: 3rem 1.5rem;
+      background: linear-gradient(180deg, rgba(212, 175, 55, 0.05) 0%, rgba(0,0,0,0.3) 100%);
+      border-top: 1px solid rgba(212, 175, 55, 0.3);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+      margin: 2rem 0;
+      position: relative;
+      z-index: 5;
+    }
+    .egypt-flag {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 900;
+      letter-spacing: 4px;
+      background: linear-gradient(180deg, #fff, #d4af37);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .arab-world-text {
+      font-size: clamp(1.6rem, 4vw, 2.5rem);
+      font-weight: 700;
+      color: #e0d3b0;
+      margin-top: 0.5rem;
+      font-family: 'El Messiri', sans-serif;
+    }
+    /* تذييل */
+    .footer-luxury {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      background: rgba(0,0,0,0.7);
+      backdrop-filter: blur(10px);
+      color: #9a8b6e;
+      font-size: 0.9rem;
+      border-top: 1px solid rgba(212, 175, 55, 0.2);
+      position: relative;
+      z-index: 5;
+    }
+    .footer-luxury .gold-dot {
+      color: #d4af37;
+      margin: 0 0.4rem;
+    }
+    /* تأثيرات إضافية */
+    .floating-gem {
+      position: absolute;
+      font-size: 2rem;
+      opacity: 0.15;
+      animation: floatGem 6s ease-in-out infinite;
+      pointer-events: none;
+      color: #d4af37;
+    }
+    @keyframes floatGem {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      33% { transform: translateY(-30px) rotate(10deg); }
+      66% { transform: translateY(-10px) rotate(-10deg); }
+    }
+    /* تجاوب */
+    @media (max-width: 600px) {
+      .luxury-card {
+        padding: 1.8rem 1.2rem;
+        border-radius: 20px;
+      }
+      .social-btn {
+        padding: 0.8rem 1.4rem;
+        font-size: 1rem;
+      }
+      .ornament-left, .ornament-right {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- وميض المؤشر -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+  <!-- جسيمات -->
+  <canvas id="particles-canvas"></canvas>
+  <!-- زخارف -->
+  <div class="ornament-left">✦ ◈ ✦</div>
+  <div class="ornament-right">✦ ◈ ✦</div>
+
+  <!-- ستارة الدخول -->
+  <div id="intro-overlay" onclick="document.getElementById('intro-overlay').classList.add('hidden')">
+    <div class="intro-content">
+      <span class="intro-crown">👑</span>
+      <div class="intro-title">ملك مونتاج</div>
+      <div class="intro-sub">ابن البحيره</div>
+    </div>
+  </div>
+
+  <!-- المحتوى الرئيسي -->
+  <div class="main-content">
+    <main>
+      <section class="hero">
+        <div class="hero-inner">
+          <span class="crown-main">👑</span>
+          <h1>ملك مونتاج</h1>
+          <p class="subtitle-main">ابن البحيره</p>
+
+          <div class="luxury-card">
+            <span class="card-badge">⚜️ رويال إيديت ⚜️</span>
+            <p style="font-size: 1.8rem; color: #d4af37; font-weight: 700; margin-bottom: 0.3rem;">مطور مواقع & إيديتور محترف</p>
+            <p style="font-size: 1.5rem; color: #f0e6d3; margin-bottom: 0.2rem;">أنا بحب شغلي جداً ❤️</p>
+            <p style="font-size: 1.3rem; color: #c9b896;">وبحب كل العاملين معايا من كل قلبي</p>
+          </div>
+
+          <!-- جملة حب العالم العربي -->
+          <div class="love-arab">I ♥ the Arab world</div>
+          <p style="color: #c9a84c; font-size: 1.3rem; letter-spacing: 2px; margin-top: -0.5rem;">وافتخر بكوني جزءاً من هذه الأمة العظيمة</p>
+        </div>
+      </section>
+
+      <!-- من أنا -->
+      <section class="section-padding">
+        <div class="luxury-card">
+          <h2 class="section-title" style="margin-top: 0;">👑 من أنا؟</h2>
+          <p style="font-size: 1.4rem; color: #e0d3b0; line-height: 2;">
+            أنا <span class="highlight-gold">ملك مونتاج ابن البحيره</span>، أجمع بين <span class="highlight-white">فن المونتاج</span> و<span class="highlight-white">تطوير المواقع</span> برؤية ملكية. كل مشروع عندي هو تحفة فنية تُروى بإتقان، وكل عميل هو شريك نجاح. شغفي لا يعرف الحدود، وإبداعي لا يهدأ.
+          </p>
+        </div>
+      </section>
+
+      <!-- الرؤية -->
+      <section class="section-padding" style="padding-top: 1rem;">
+        <div class="luxury-card">
+          <h2 class="section-title" style="margin-top: 0;">✨ رؤيتي</h2>
+          <p style="font-size: 1.7rem; font-weight: 700; color: #d4af37; margin-bottom: 1rem; font-family: 'El Messiri', sans-serif;">
+            "الإبداع مش مجرد شغل... ده تاج على راسي"
+          </p>
+          <p style="font-size: 1.3rem; color: #d5c9a8;">
+            أسعى لتحويل كل فكرة إلى أيقونة خالدة. أحب فريقي وعملائي، ومعًا نصنع إرثًا من الإبداع يليق بالملوك.
+          </p>
+        </div>
+      </section>
+
+      <!-- الخدمات -->
+      <section class="section-padding" style="padding-top: 1rem;">
+        <h2 class="section-title">🚀 خدماتنا الملكية</h2>
+        <p style="text-align: center; font-size: 1.3rem; color: #c9b896; margin-bottom: 2.5rem;">
+          جميع خدمات <span class="highlight-gold">المونتاج</span> و<span class="highlight-gold">المواقع</span> بأعلى معايير الفخامة
+        </p>
+        <div class="services-grid">
+          <div class="service-box">
+            <div class="service-icon"><i class="fas fa-film"></i></div>
+            <h3>مونتاج سينمائي</h3>
+            <p>تحرير فيديوهات بجودة هوليوودية، قصص بصرية تأسر الألباب.</p>
+          </div>
+          <div class="service-box">
+            <div class="service-icon"><i class="fas fa-gem"></i></div>
+            <h3>مواقع فاخرة</h3>
+            <p>تصميم وتطوير مواقع تعكس الهيبة والرقي، بأداء سحري.</p>
+          </div>
+          <div class="service-box">
+            <div class="service-icon"><i class="fas fa-crown"></i></div>
+            <h3>هوية بصرية ملكية</h3>
+            <p>شعارات وهويات تحمل بصمة الفخامة والتميز.</p>
+          </div>
+          <div class="service-box">
+            <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+            <h3>تسويق النخبة</h3>
+            <p>استراتيجيات رقمية تضعك في صدارة المشهد.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- تواصل -->
+      <section class="section-padding" style="padding-top: 1rem;">
+        <div class="luxury-card">
+          <h2 class="section-title" style="margin-top: 0;">📱 التشريف لي</h2>
+          <p style="text-align: center; font-size: 1.3rem; color: #d5c9a8; margin-bottom: 2rem;">
+            لا تتردد، فالعالم ينتظر إبداعك. تواصل معي اليوم.
+          </p>
+          <div class="social-links">
+            <a href="https://t.me/Ibn_al_Bayhira" target="_blank" rel="noopener" class="social-btn telegram">
+              <i class="fab fa-telegram-plane"></i> تيليجرام
+            </a>
+            <a href="https://www.youtube.com/@Ibn_al_Bayhira" target="_blank" rel="noopener" class="social-btn youtube">
+              <i class="fab fa-youtube"></i> يوتيوب
+            </a>
+            <a href="https://wa.me/201214044652?text=السلام عليكم" target="_blank" rel="noopener" class="social-btn whatsapp">
+              <i class="fab fa-whatsapp"></i> واتساب
+            </a>
+          </div>
+          <p style="text-align: center; color: #d4af37; font-weight: 600; margin-top: 1rem; font-size: 1.1rem;">
+            @Ibn_al_Bayhira ⚜️
+          </p>
+        </div>
+      </section>
+
+      <!-- وطني -->
+      <section class="patriotic-section">
+        <p class="egypt-flag">🇪🇬 تحيا مصر 🇪🇬</p>
+        <p class="arab-world-text">ويعيش الوطن العربي العظيم</p>
+        <p style="color: #d4af37; font-size: 1.4rem; margin-top: 0.8rem; font-weight: 600;">I love the Arab world 🌍</p>
+      </section>
+    </main>
+
+    <footer class="footer-luxury">
+      <p>© 2026 <span class="gold-dot">●</span> ملك مونتاج ابن البحيره <span class="gold-dot">●</span> جميع الحقوق محفوظة</p>
+      <p style="margin-top: 0.5rem;">مطور مواقع & إيديتور <span class="gold-dot">◇</span> فخامة بلا حدود</p>
+      <p style="color: #d4af37; margin-top: 0.3rem; font-weight: 600;">@Ibn_al_Bayhira</p>
+    </footer>
+  </div>
+
+  <script>
+    (function() {
+      // ستارة الدخول تختفي تلقائياً بعد 3.5 ثانية
+      const overlay = document.getElementById('intro-overlay');
+      setTimeout(() => {
+        if (overlay) overlay.classList.add('hidden');
+      }, 3500);
+
+      // وميض المؤشر
+      const glow =
