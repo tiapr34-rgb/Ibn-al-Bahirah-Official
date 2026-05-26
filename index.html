@@ -1,4 +1,3 @@
-.
 <!DOCTYPE html>
 <html lang="ar" dir="rtl" class="scroll-smooth">
 <head>
@@ -6,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="site-title">ملك مونتاج ابن البحيرة | المطور والإيديتور التايه</title>
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
     <!-- Google Fonts - Cairo, Tajawal & Orbitron -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Tajawal:wght@300;400;500;700;900&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <script>
         tailwind.config = {
             theme: {
@@ -66,7 +66,7 @@
             #custom-cursor-glow {
                 width: 300px;
                 height: 300px;
-                background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, rgba(0,0,0,0) 70%);
+                background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, rgba(0, 0, 0, 0) 70%);
                 position: fixed;
                 transform: translate(-50%, -50%);
                 pointer-events: none;
@@ -133,16 +133,30 @@
 
         /* تأثيرات التحليق والأنيميشن للرسالة */
         @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-10px) rotate(1deg); }
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-10px) rotate(1deg);
+            }
         }
         @keyframes glowPulse {
-            0%, 100% { box-shadow: 0 0 15px rgba(212, 175, 55, 0.1), inset 0 0 15px rgba(212, 175, 55, 0.05); }
-            50% { box-shadow: 0 0 30px rgba(212, 175, 55, 0.3), inset 0 0 25px rgba(212, 175, 55, 0.15); }
+            0%,
+            100% {
+                box-shadow: 0 0 15px rgba(212, 175, 55, 0.1), inset 0 0 15px rgba(212, 175, 55, 0.05);
+            }
+            50% {
+                box-shadow: 0 0 30px rgba(212, 175, 55, 0.3), inset 0 0 25px rgba(212, 175, 55, 0.15);
+            }
         }
         @keyframes shimmer {
-            0% { background-position: -200% 0; }
-            100% { background-position: 200% 0; }
+            0% {
+                background-position: -200% 0;
+            }
+            100% {
+                background-position: 200% 0;
+            }
         }
 
         .animated-message-box {
@@ -184,8 +198,12 @@
             animation: bounce-eq 0.8s ease infinite alternate;
         }
         @keyframes bounce-eq {
-            0% { height: 4px; }
-            100% { height: 24px; }
+            0% {
+                height: 4px;
+            }
+            100% {
+                height: 24px;
+            }
         }
     </style>
 </head>
@@ -204,9 +222,9 @@
             <div class="w-20 h-20 bg-luxuryGold/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <i class="fa-solid fa-wifi-slash text-luxuryGold text-3xl animate-pulse"></i>
             </div>
-            <h2 class="text-2xl font-bold text-luxuryGold mb-2 font-tajawal data-translate" data-ar="النت فصل يا إيديتور! 😅" data-en="No Connection, Editor! 😅">النت فصل يا إيديتور! 😅</h2>
+            <h2 class="text-2xl font-bold text-luxuryGold mb-2 font-tajawal data-translate" data-ar="النت فصل يا إيديتور! ??" data-en="No Connection, Editor! 😅">النت فصل يا إيديتور! 😅</h2>
             <p class="text-gray-400 mb-4 text-sm data-translate" data-ar="بدل الانهيار العصبي، جرب تصطاد 'البجز' دي لحد ما النت يرجع!" data-en="Instead of a nervous breakdown, catch some bugs until the net is back!">بدل الانهيار العصبي، جرب تصطاد "البجز" دي لحد ما النت يرجع!</p>
-            
+
             <!-- لوحة اللعبة السريعة -->
             <div class="relative w-full h-40 bg-black/50 rounded-xl overflow-hidden mb-4 border border-white/10" id="game-container">
                 <span class="absolute top-2 left-2 text-xs text-luxuryGold" id="score-text">النقاط: 0</span>
@@ -322,7 +340,7 @@
         </div>
 
         <h1 class="text-5xl md:text-8xl font-black mb-6 leading-tight font-tajawal text-transparent bg-clip-text bg-gradient-to-b from-white via-gray-200 to-luxuryGold/80 tracking-wide">
-            <span class="data-translate" data-ar="ملك مونتاج" data-en="Montage King">ملك مونتاج</span> <br> 
+            <span class="data-translate" data-ar="ملك مونتاج" data-en="Montage King">ملك مونتاج</span> <br>
             <span class="text-luxuryGold font-extrabold tracking-normal gold-glow data-translate" data-ar="ابن البحيرة" data-en="Ibn Al-Bayhira">ابن البحيرة</span>
         </h1>
 
@@ -332,9 +350,7 @@
             <p class="text-xl md:text-2xl text-gray-200 font-light leading-relaxed mb-4 data-translate" data-ar='"أنا مطور مواقع وإيديتور.. مشكلتي؟ مش عارف أكمل! 😅"' data-en='"I am a web developer and editor.. My problem? I can never finish! 😅"'>
                 "أنا مطور مواقع وإيديتور.. مشكلتي؟ مش عارف أكمل! 😅"
             </p>
-            <p class="text-gray-400 text-sm md:text-base leading-relaxed data-translate" 
-               data-ar="هنا بنوثق الرحلة الحقيقية لمطور وإيديتور تايه بين الأكواد والمونتاج. بين محاولات فاشلة، أخطاء مطبعية غبية، ومشاريع نص كمبيالة. أنا بجد بحب شغلي جداً وبحب كل العاملين والمبدعين اللي بيساعدوني، بس سيبك من البرستيج الكداب.. تعالى شوف الفوضى على أصولها!" 
-               data-en="Here we document the real journey of a developer and editor lost between codes and editing. Between failed attempts, stupid typos, and unfinished projects. I seriously love my work and love all creators helping me, but forget the fake prestige.. come see the raw chaos!">
+            <p class="text-gray-400 text-sm md:text-base leading-relaxed data-translate" data-ar="هنا بنوثق الرحلة الحقيقية لمطور وإيديتور تايه بين الأكواد والمونتاج. بين محاولات فاشلة، أخطاء مطبعية غبية، ومشاريع نص كمبيالة. أنا بجد بحب شغلي جداً وبحب كل العاملين والمبدعين اللي بيساعدوني، بس سيبك من البرستيج الكداب.. تعالى شوف الفوضى على أصولها!" data-en="Here we document the real journey of a developer and editor lost between codes and editing. Between failed attempts, stupid typos, and unfinished projects. I seriously love my work and love all creators helping me, but forget the fake prestige.. come see the raw chaos!">
                 هنا بنوثق الرحلة الحقيقية لمطور وإيديتور تايه بين الأكواد والمونتاج. بين محاولات فاشلة، أخطاء مطبعية غبية، ومشاريع نص كمبيالة. أنا بجد بحب شغلي جداً وبحب كل العاملين والمبدعين اللي بيساعدوني، بس سيبك من البرستيج الكداب.. تعالى شوف الفوضى على أصولها!
             </p>
         </div>
@@ -374,10 +390,8 @@
                         <i class="fa-solid fa-video"></i>
                     </div>
                     <h3 class="text-2xl font-bold text-white mb-4 font-tajawal data-translate" data-ar="مونتاج سينمائي (أنا الإيديتور أصلاً)" data-en="Cinematic Editing (I'm the Real Editor)">مونتاج سينمائي (أنا الإيديتور أصلاً)</h3>
-                    <p class="text-gray-400 leading-relaxed mb-6 data-translate" 
-                       data-ar="فيديوهات مونتاج بلمسة سينمائية فخمة تليق برؤيتك الإبداعية. بنعمل السحر من لقطاتك العادية عشان تطلع تحفة تليق باليوتيوب والسوشيال ميديا." 
-                       data-en="High-quality cinematic video editing fit for your creative vision. We weave magic from raw footage to stand out on YouTube and social media.">
-                       فيديوهات مونتاج بلمسة سينمائية فخمة تليق برؤيتك الإبداعية. بنعمل السحر من لقطاتك العادية عشان تطلع تحفة تليق باليوتيوب والسوشيال ميديا.
+                    <p class="text-gray-400 leading-relaxed mb-6 data-translate" data-ar="فيديوهات مونتاج بلمسة سينمائية فخمة تليق برؤيتك الإبداعية. بنعمل السحر من لقطاتك العادية عشان تطلع تحفة تليق باليوتيوب والسوشيال ميديا." data-en="High-quality cinematic video editing fit for your creative vision. We weave magic from raw footage to stand out on YouTube and social media.">
+                        فيديوهات مونتاج بلمسة سينمائية فخمة تليق برؤيتك الإبداعية. بنعمل السحر من لقطاتك العادية عشان تطلع تحفة تليق باليوتيوب والسوشيال ميديا.
                     </p>
                     <a href="https://wa.me/201214044652?text=أريد%20خدمة%20مونتاج%20سينمائي" target="_blank" class="text-luxuryGold font-semibold hover:text-white transition flex items-center gap-2">
                         <span class="data-translate" data-ar="اطلب الخدمة من الملك" data-en="Order Service from the King">اطلب الخدمة من الملك</span>
@@ -392,10 +406,8 @@
                         <i class="fa-solid fa-code"></i>
                     </div>
                     <h3 class="text-2xl font-bold text-white mb-4 font-tajawal data-translate" data-ar="تطوير مواقع (من شخص لسه بيتعلم)" data-en="Web Development (From a Continuous Learner)">تطوير مواقع (من شخص لسه بيتعلم)</h3>
-                    <p class="text-gray-400 leading-relaxed mb-6 data-translate" 
-                       data-ar="برمجة مواقع جميلة ومتكاملة بأحدث اللمسات. بنحط الكود على الكود لغاية ما الموقع يشتغل بأمان الله.. والنتيجة دائماً بتبهر العملاء بفضل كرم ربنا!" 
-                       data-en="Developing beautiful and responsive websites. We stack code upon code until it runs safely by God's grace.. keeping clients totally amazed!">
-                       برمجة مواقع جميلة ومتكاملة بأحدث اللمسات. بنحط الكود على الكود لغاية ما الموقع يشتغل بأمان الله.. والنتيجة دائماً بتبهر العملاء بفضل كرم ربنا!
+                    <p class="text-gray-400 leading-relaxed mb-6 data-translate" data-ar="برمجة مواقع جميلة ومتكاملة بأحدث اللمسات. بنحط الكود على الكود لغاية ما الموقع يشتغل بأمان الله.. والنتيجة دائماً بتبهر العملاء بفضل كرم ربنا!" data-en="Developing beautiful and responsive websites. We stack code upon code until it runs safely by God's grace.. keeping clients totally amazed!">
+                        برمجة مواقع جميلة ومتكاملة بأحدث اللمسات. بنحط الكود على الكود لغاية ما الموقع يشتغل بأمان الله.. والنتيجة دائماً بتبهر العملاء بفضل كرم ربنا!
                     </p>
                     <a href="https://wa.me/201214044652?text=أريد%20برمجة%20موقع%20إلكتروني" target="_blank" class="text-accentCyan font-semibold hover:text-white transition flex items-center gap-2">
                         <span class="data-translate" data-ar="برمج موقعك الآن" data-en="Code Your Website Now">برمج موقعك الآن</span>
@@ -410,10 +422,8 @@
                         <i class="fa-solid fa-lightbulb"></i>
                     </div>
                     <h3 class="text-2xl font-bold text-white mb-4 font-tajawal data-translate" data-ar="أفكار 'لمبة الحمام' النادرة" data-en="Midnight Toilet Bulb Ideas">أفكار "لمبة الحمام" النادرة</h3>
-                    <p class="text-gray-400 leading-relaxed mb-6 data-translate" 
-                       data-ar="اللحظات العبقرية المفاجئة اللي بتيجي فجأة بنص الليل وبتحل أعقد المشاكل في المونتاج أو الكود. خدماتنا مش مجرد شغل.. خدماتنا فيها روح الإلهام الصادق!" 
-                       data-en="Sudden stroke of midnight genius resolving complex code or rendering issues. Our services aren't just work; they're pure inspired energy!">
-                       اللحظات العبقرية المفاجئة اللي بتيجي فجأة بنص الليل وبتحل أعقد المشاكل في المونتاج أو الكود. خدماتنا مش مجرد شغل.. خدماتنا فيها روح الإلهام الصادق!
+                    <p class="text-gray-400 leading-relaxed mb-6 data-translate" data-ar="اللحظات العبقرية المفاجئة اللي بتيجي فجأة بنص الليل وبتحل أعقد المشاكل في المونتاج أو الكود. خدماتنا مش مجرد شغل.. خدماتنا فيها روح الإلهام الصادق!" data-en="Sudden stroke of midnight genius resolving complex code or rendering issues. Our services aren't just work; they're pure inspired energy!">
+                        اللحظات العبقرية المفاجئة اللي بتيجي فجأة بنص الليل وبتحل أعقد المشاكل في المونتاج أو الكود. خدماتنا مش مجرد شغل.. خدماتنا فيها روح الإلهام الصادق!
                     </p>
                     <a href="https://wa.me/201214044652?text=محتاج%20فكرة%20إبداعية%20عبقرية" target="_blank" class="text-yellow-400 font-semibold hover:text-white transition flex items-center gap-2">
                         <span class="data-translate" data-ar="احجز فكرة مجنونة" data-en="Book a Crazy Idea">احجز فكرة مجنونة</span>
@@ -438,7 +448,7 @@
 
             <!-- شبكة السلوك الإبداعي والانهيارات -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                
+
                 <!-- العنصر 1 -->
                 <div class="chaos-border bg-black/40 p-8 rounded-2xl transition-all duration-300 transform hover:-translate-y-2 reveal-on-scroll">
                     <div class="flex items-center gap-4 mb-4">
@@ -447,10 +457,8 @@
                         </div>
                         <h4 class="text-xl font-bold text-white font-tajawal data-translate" data-ar="🎥 مونتاج سينمائي" data-en="🎥 Cinematic Editing">🎥 مونتاج سينمائي</h4>
                     </div>
-                    <p class="text-gray-400 leading-relaxed data-translate" 
-                       data-ar="أنا الإيديتور أصلاً، وهتشوف فيديوهات مونتاج معمولة بلمسات سينمائية ومعدلة بألوان مريحة وممتعة هتعجب عينك وعقلك." 
-                       data-en="I'm the ultimate editor. You'll witness video cuts curated with aesthetic cinematic feel and comfortable colors matching your mood.">
-                       أنا الإيديتور أصلاً، وهتشوف فيديوهات مونتاج معمولة بلمسات سينمائية ومعدلة بألوان مريحة وممتعة هتعجب عينك وعقلك.
+                    <p class="text-gray-400 leading-relaxed data-translate" data-ar="أنا الإيديتور أصلاً، وهتشوف فيديوهات مونتاج معمولة بلمسات سينمائية ومعدلة بألوان مريحة وممتعة هتعجب عينك وعقلك." data-en="I'm the ultimate editor. You'll witness video cuts curated with aesthetic cinematic feel and comfortable colors matching your mood.">
+                        أنا الإيديتور أصلاً، وهتشوف فيديوهات مونتاج معمولة بلمسات سينمائية ومعدلة بألوان مريحة وممتعة هتعجب عينك وعقلك.
                     </p>
                 </div>
 
@@ -462,10 +470,8 @@
                         </div>
                         <h4 class="text-xl font-bold text-white font-tajawal data-translate" data-ar="💻 تطوير مواقع وتعلّم مستمر" data-en="💻 Web Dev & Continuous Learning">💻 تطوير مواقع وتعلّم مستمر</h4>
                     </div>
-                    <p class="text-gray-400 leading-relaxed data-translate" 
-                       data-ar="محتوى تطوير مواقع عملي وتفاعلي جداً ومن شخص لسه بيتعلم زيك تماماً خطوة بخطوة من غير فلسفة كدابة." 
-                       data-en="Practical, engaging web development content from a continuously learning developer, breaking it down step-by-step without fake complex theories.">
-                       محتوى تطوير مواقع عملي وتفاعلي جداً ومن شخص لسه بيتعلم زيك تماماً خطوة بخطوة من غير فلسفة كدابة.
+                    <p class="text-gray-400 leading-relaxed data-translate" data-ar="محتوى تطوير مواقع عملي وتفاعلي جداً ومن شخص لسه بيتعلم زيك تماماً خطوة بخطوة من غير فلسفة كدابة." data-en="Practical, engaging web development content from a continuously learning developer, breaking it down step-by-step without fake complex theories.">
+                        محتوى تطوير مواقع عملي وتفاعلي جداً ومن شخص لسه بيتعلم زيك تماماً خطوة بخطوة من غير فلسفة كدابة.
                     </p>
                 </div>
 
@@ -477,10 +483,8 @@
                         </div>
                         <h4 class="text-xl font-bold text-white font-tajawal data-translate" data-ar="🤯 لحظات الانهيارات العصبية" data-en="🤯 Mental Breakdown Moments">🤯 لحظات الانهيارات العصبية</h4>
                     </div>
-                    <p class="text-gray-400 leading-relaxed data-translate" 
-                       data-ar="موثقة بكاميرا خفية وبكل صراحة.. لحظات الإحباط لما الكود يعلق على علامة فاصة منقوطة تافهة أو لما المونتاج يرفض الرندر!" 
-                       data-en="Candidly caught on camera.. absolute frustration when code breaks over a missing semicolon or video editor declines rendering!">
-                       موثقة بكاميرا خفية وبكل صراحة.. لحظات الإحباط لما الكود يعلق على علامة فاصة منقوطة تافهة أو لما المونتاج يرفض الرندر!
+                    <p class="text-gray-400 leading-relaxed data-translate" data-ar="موثقة بكاميرا خفية وبكل صراحة.. لحظات الإحباط لما الكود يعلق على علامة فاصة منقوطة تافهة أو لما المونتاج يرفض الرندر!" data-en="Candidly caught on camera.. absolute frustration when code breaks over a missing semicolon or video editor declines rendering!">
+                        موثقة بكاميرا خفية وبكل صراحة.. لحظات الإحباط لما الكود يعلق على علامة فاصة منقوطة تافهة أو لما المونتاج يرفض الرندر!
                     </p>
                 </div>
 
@@ -492,10 +496,8 @@
                         </div>
                         <h4 class="text-xl font-bold text-white font-tajawal data-translate" data-ar="✅ لحظات النجاح النادرة" data-en="✅ Rare Ultimate Wins">✅ لحظات النجاح النادرة</h4>
                     </div>
-                    <p class="text-gray-400 leading-relaxed data-translate" 
-                       data-ar="بتوع 'لمبة الحمام' النادرة والذكية، اللي بتغير مجرى المشروع فجأة وتخليه يشتغل ويفرح قلب كل العملاء الأفاضل." 
-                       data-en="Those legendary midnight lightbulb moments that salvage the entire project, delivering pure success and joy to clients.">
-                       بتوع "لمبة الحمام" النادرة والذكية، اللي بتغير مجرى المشروع فجأة وتخليه يشتغل ويفرح قلب كل العملاء الأفاضل.
+                    <p class="text-gray-400 leading-relaxed data-translate" data-ar="بتوع 'لمبة الحمام' النادرة والذكية، اللي بتغير مجرى المشروع فجأة وتخليه يشتغل ويفرح قلب كل العملاء الأفاضل." data-en="Those legendary midnight lightbulb moments that salvage the entire project, delivering pure success and joy to clients.">
+                        بتوع "لمبة الحمام" النادرة والذكية، اللي بتغير مجرى المشروع فجأة وتخليه يشتغل ويفرح قلب كل العملاء الأفاضل.
                     </p>
                 </div>
 
@@ -503,7 +505,7 @@
 
             <!-- الرسالة الختامية المرحة في القصة (مع الرقصات الديكورية) -->
             <div class="mt-20 text-center animated-message-box p-10 rounded-3xl max-w-3xl mx-auto shadow-2xl relative overflow-hidden reveal-on-scroll">
-                
+
                 <!-- الرموز واللوحات الديكورية الطائرة للتأثير الحركي -->
                 <div class="absolute top-4 left-4 text-luxuryGold/20 text-4xl pointer-events-none animate-float-slow select-none">🎬</div>
                 <div class="absolute bottom-4 right-6 text-accentCyan/20 text-4xl pointer-events-none animate-float-delayed select-none">💻</div>
@@ -518,12 +520,10 @@
                     <span class="inline-block bg-luxuryGold/10 text-luxuryGold text-xs font-bold px-4 py-1.5 rounded-full border border-luxuryGold/30 mb-6 tracking-wider animate-pulse data-translate" data-ar="💡 الحقيقة الفلسفية المطلقة" data-en="💡 Absolute Philosophical Truth">
                         💡 الحقيقة الفلسفية المطلقة
                     </span>
-                    <p class="text-xl md:text-3xl text-white font-tajawal font-medium leading-relaxed mb-8 select-none data-translate" 
-                       data-ar='"مش عارف إذا كنت هكمل في البرمجة ولا هتفرغ للمونتاج ولا هعمل الاثنين مع بعض وأتخزي.. سيبك من كل ده، اشترك وشوف الفوضى والجمال ده بنفسك!" 🚀' 
-                       data-en='"Don&apos;t know if I will stick to coding, video editing, or just mix both and embarrass myself.. forget all that, subscribe and witness the chaos!" 🚀'>
+                    <p class="text-xl md:text-3xl text-white font-tajawal font-medium leading-relaxed mb-8 select-none data-translate" data-ar='"مش عارف إذا كنت هكمل في البرمجة ولا هتفرغ للمونتاج ولا هعمل الاثنين مع بعض وأتخزي.. سيبك من كل ده، اشترك وشوف الفوضى والجمال ده بنفسك!" 🚀' data-en='"Don&apos;t know if I will stick to coding, video editing, or just mix both and embarrass myself.. forget all that, subscribe and witness the chaos!" 🚀'>
                         "مش عارف إذا كنت هكمل في البرمجة ولا هتفرغ للمونتاج ولا هعمل الاثنين مع بعض وأتخزي.. سيبك من كل ده، اشترك وشوف الفوضى والجمال ده بنفسك!" 🚀
                     </p>
-                    
+
                     <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
                         <a href="https://www.youtube.com/@Ibn_al_Bayhira" target="_blank" class="relative group overflow-hidden bg-red-600 hover:bg-red-700 text-white font-black px-10 py-4 rounded-full flex items-center justify-center gap-3 transition-all transform hover:scale-105 shadow-xl shadow-red-600/20 w-full sm:w-auto">
                             <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></span>
@@ -541,27 +541,23 @@
     <section id="contact" class="relative z-10 py-32 px-6 md:px-12 bg-darkBg border-t border-luxuryGold/10">
         <div class="max-w-6xl mx-auto">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                
+
                 <!-- الجانب الأيمن: النص والمقولة الملهمة وشعار الوطن العربي -->
                 <div class="reveal-on-scroll">
                     <span class="text-luxuryGold font-semibold text-sm uppercase tracking-widest block mb-2 data-translate" data-ar="أهلاً بك في عالمي" data-en="Welcome to My Universe">أهلاً بك في عالمي</span>
                     <h2 class="text-4xl md:text-5xl font-black text-white font-tajawal leading-tight mb-6">
-                        <span class="data-translate" data-ar="دعنا نبتكر شيئاً فريداً" data-en="Let's Invent Something Unique">دعنا نبتكر شيئاً فريداً</span> <br> 
+                        <span class="data-translate" data-ar="دعنا نبتكر شيئاً فريداً" data-en="Let's Invent Something Unique">دعنا نبتكر شيئاً فريداً</span> <br>
                         <span class="text-luxuryGold gold-glow data-translate" data-ar="تحيا مصر والوطن العربي" data-en="Long Live Egypt & The Arab World">تحيا مصر والوطن العربي</span>
                     </h2>
-                    <p class="text-gray-300 text-lg leading-relaxed mb-8 data-translate" 
-                       data-ar="أنا بحب شغلي جداً وبحب كل العاملين والمبدعين والمتابعين الأوفياء. مستني رسالتك عشان نتفق أو ندردش في مشروعك الجاي!" 
-                       data-en="I absolutely love my craft and respect all hardworking creators. Waiting for your query to outline our next beautiful project!">
+                    <p class="text-gray-300 text-lg leading-relaxed mb-8 data-translate" data-ar="أنا بحب شغلي جداً وبحب كل العاملين والمبدعين والمتابعين الأوفياء. مستني رسالتك عشان نتفق أو ندردش في مشروعك الجاي!" data-en="I absolutely love my craft and respect all hardworking creators. Waiting for your query to outline our next beautiful project!">
                         أنا بحب شغلي جداً وبحب كل العاملين والمبدعين والمتابعين الأوفياء. مستني رسالتك عشان نتفق أو ندردش في مشروعك الجاي!
                     </p>
-                    
+
                     <!-- البطاقة العربية الفخمة -->
                     <div class="bg-luxuryGold/5 border-r-4 border-luxuryGold p-6 rounded-l-xl backdrop-blur-sm mb-8 relative overflow-hidden group">
                         <div class="absolute top-0 left-0 w-full h-full bg-luxuryGold/5 opacity-0 group-hover:opacity-100 transition duration-500"></div>
                         <span class="block text-xs text-luxuryGold font-bold mb-2 uppercase tracking-widest data-translate" data-ar="فخر وانتماء 🇪🇬 🌍" data-en="Pride & Affiliation 🇪🇬 🌍">فخر وانتماء 🇪🇬 🌍</span>
-                        <p class="text-white italic text-lg leading-relaxed relative z-10 data-translate" 
-                           data-ar='"تحيا جمهورية مصر العربية العظيمة ووطننا العربي الحبيب دائماً وأبداً. أهلاً بك من أي مكان في وطننا الكبير."' 
-                           data-en='"Long live the Great Arab Republic of Egypt and our beloved Arab Union always and forever. Welcome from all over the world."'>
+                        <p class="text-white italic text-lg leading-relaxed relative z-10 data-translate" data-ar='"تحيا جمهورية مصر العربية العظيمة ووطننا العربي الحبيب دائماً وأبداً. أهلاً بك من أي مكان في وطننا الكبير."' data-en='"Long live the Great Arab Republic of Egypt and our beloved Arab Union always and forever. Welcome from all over the world."'>
                             "تحيا جمهورية مصر العربية العظيمة ووطننا العربي الحبيب دائماً وأبداً. أهلاً بك من أي مكان في وطننا الكبير."
                         </p>
                     </div>
@@ -577,6 +573,11 @@
                         <a href="https://www.youtube.com/@Ibn_al_Bayhira" target="_blank" class="px-6 py-3 bg-[#ff0000]/10 hover:bg-[#ff0000] text-[#ff0000] hover:text-white border border-[#ff0000]/30 rounded-xl flex items-center gap-3 transition-all transform hover:-translate-y-1">
                             <i class="fa-brands fa-youtube text-2xl"></i>
                             <span class="font-bold data-translate" data-ar="يوتيوب ابن البحيرة" data-en="Our YouTube Channel">يوتيوب ابن البحيرة</span>
+                        </a>
+                        <!-- تويتش -->
+                        <a href="https://www.twitch.tv/zetrix1831" target="_blank" class="px-6 py-3 bg-[#9146FF]/10 hover:bg-[#9146FF] text-[#9146FF] hover:text-white border border-[#9146FF]/30 rounded-xl flex items-center gap-3 transition-all transform hover:-translate-y-1">
+                            <i class="fa-brands fa-twitch text-2xl"></i>
+                            <span class="font-bold data-translate" data-ar="قناة التويتش" data-en="Twitch Channel">قناة التويتش</span>
                         </a>
                     </div>
                 </div>
@@ -618,23 +619,23 @@
     <!-- نافذة منبثقة تفاعلية عند إرسال رسالة بنجاح (Success Modal) -->
     <div id="success-modal" class="fixed inset-0 bg-darkBg/95 z-[10001] flex items-center justify-center p-6 hidden opacity-0 transition-opacity duration-300">
         <div id="success-modal-card" class="relative max-w-md w-full p-8 rounded-3xl border border-luxuryGold bg-darkBg/90 backdrop-blur-xl shadow-2xl text-center transform scale-90 transition-transform duration-300">
-            
+
             <!-- مؤثر إضاءة خلفي فخم -->
             <div class="absolute -top-10 -left-10 w-40 h-40 bg-luxuryGold/10 rounded-full filter blur-2xl pointer-events-none"></div>
-            
+
             <div class="w-20 h-20 bg-luxuryGold/10 rounded-full flex items-center justify-center mx-auto mb-6 border border-luxuryGold/30">
                 <i class="fa-solid fa-check text-luxuryGold text-4xl animate-bounce"></i>
             </div>
-            
+
             <h2 class="text-2xl font-bold text-luxuryGold mb-3 font-tajawal data-translate" data-ar="تم إرسال الرسالة الآن! 🎉" data-en="Message Sent Successfully! 🎉">تم إرسال الرسالة الآن! 🎉</h2>
             <p class="text-white text-base mb-2 data-translate" data-ar="جاري فتح محادثة الواتساب فوراً..." data-en="Opening WhatsApp chat instantly...">جاري فتح محادثة الواتساب فوراً...</p>
             <p class="text-chaosRed text-sm font-semibold mb-6 data-translate" data-ar="⏳ الرجاء الانتظار بضع ثوانٍ (5 ثوانٍ) لإعادة تفعيل الإرسال." data-en="⏳ Please wait a few seconds (5 sec) to reactivate submission.">⏳ الرجاء الانتظار بضع ثوانٍ (5 ثوانٍ) لإعادة تفعيل الإرسال.</p>
-            
+
             <!-- شريط تقدم المؤقت التنازلي البصري -->
             <div class="w-full bg-white/5 h-2 rounded-full overflow-hidden mb-6">
                 <div id="modal-progress" class="bg-luxuryGold h-full w-0 transition-all ease-linear"></div>
             </div>
-            
+
             <div id="modal-countdown" class="text-luxuryGold font-black text-xl mb-6 font-tajawal">5 ثوانٍ متبقية</div>
 
             <button id="close-success-modal" class="w-full bg-white/5 border border-white/10 hover:border-luxuryGold hover:text-luxuryGold text-white py-3 rounded-xl transition duration-300 font-bold data-translate" data-ar="حسناً، فهمت!" data-en="Okay, Got It!">
@@ -651,7 +652,7 @@
                 <span class="text-gray-600">|</span>
                 <span class="text-gray-400">ابن البحيرة</span>
             </div>
-            
+
             <!-- لوحة عداد الزوار التفاعلية الحية -->
             <div class="my-4 py-3 px-6 bg-white/[0.02] border border-luxuryGold/20 rounded-2xl inline-flex flex-col items-center shadow-lg backdrop-blur-md">
                 <span class="text-xs text-gray-400 tracking-wider mb-1 uppercase font-semibold data-translate" data-ar="عدد زوار الموقع النشطين" data-en="Total Live Visitors">عدد زوار الموقع النشطين</span>
@@ -661,9 +662,16 @@
                 </div>
             </div>
 
-            <p class="text-gray-500 text-sm max-w-md data-translate" 
-               data-ar="كل الحقوق محفوظة © ٢٠٢٦. تم برمجته وتصميمه بفخر لدعم الإبداع والكوميديا والوطن العربي. تحيا جمهورية مصر العربية والوطن العربي العظيم." 
-               data-en="All rights reserved © 2026. Programmed & designed with pride to support creativity, comedy, and the Arab world. Long live Egypt and the glorious Arab World.">
+            <!-- البريد الإلكتروني -->
+            <div class="my-2">
+                <a href="mailto:tektok12gmh@gmail.com" class="inline-flex items-center gap-3 px-6 py-3 bg-white/[0.02] border border-white/10 hover:border-luxuryGold/50 rounded-xl transition-all hover:scale-105 group">
+                    <i class="fa-solid fa-envelope text-luxuryGold text-xl group-hover:animate-bounce"></i>
+                    <span class="text-gray-300 group-hover:text-luxuryGold transition font-medium text-sm">tektok12gmh@gmail.com</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-xs text-gray-500 group-hover:text-luxuryGold transition"></i>
+                </a>
+            </div>
+
+            <p class="text-gray-500 text-sm max-w-md data-translate" data-ar="كل الحقوق محفوظة © ٢٠٢٦. تم برمجته وتصميمه بفخر لدعم الإبداع والكوميديا والوطن العربي. تحيا جمهورية مصر العربية والوطن العربي العظيم." data-en="All rights reserved © 2026. Programmed & designed with pride to support creativity, comedy, and the Arab world. Long live Egypt and the glorious Arab World.">
                 كل الحقوق محفوظة © ٢٠٢٦. تم برمجته وتصميمه بفخر لدعم الإبداع والكوميديا والوطن العربي. تحيا جمهورية مصر العربية والوطن العربي العظيم.
             </p>
             <!-- لمسة مايكروتكست مخصصة -->
@@ -705,11 +713,11 @@
                 htmlNode.classList.add('font-tajawal');
                 langText.textContent = 'العربية';
                 document.getElementById('site-title').textContent = "Montage King Ibn Al-Bayhira | Web Dev & Lost Editor";
-                
+
                 // تحديث حقول المدخلات (Placeholders)
                 document.getElementById('user-name').placeholder = "Write your name here..";
                 document.getElementById('user-message').placeholder = "Describe details here..";
-                
+
                 // تعديل خيارات القائمة المنسدلة
                 const projectSelect = document.getElementById('user-project');
                 projectSelect.options[0].text = "Need cinematic video editing 🎬";
@@ -721,7 +729,7 @@
                 htmlNode.classList.add('font-cairo');
                 langText.textContent = 'English';
                 document.getElementById('site-title').textContent = "ملك مونتاج ابن البحيرة | المطور والإيديتور التايه";
-                
+
                 document.getElementById('user-name').placeholder = "اكتب اسمك هنا..";
                 document.getElementById('user-message').placeholder = "اكتب التفاصيل هنا..";
 
@@ -741,7 +749,7 @@
         let isMusicPlaying = false;
         let noteTimeout = null;
         let currentNoteIndex = 0;
-        
+
         const musicToggle = document.getElementById('music-toggle');
         const musicBtnText = document.getElementById('music-btn-text');
         const musicStopBtn = document.getElementById('music-stop-btn');
@@ -753,22 +761,26 @@
         const billieJeanBassLine = [
             { note: 'F#2', duration: 0.26 },
             { note: 'C#3', duration: 0.26 },
-            { note: 'E3',  duration: 0.26 },
+            { note: 'E3', duration: 0.26 },
             { note: 'F#3', duration: 0.26 },
-            { note: 'E3',  duration: 0.26 },
+            { note: 'E3', duration: 0.26 },
             { note: 'C#3', duration: 0.26 },
-            { note: 'B2',  duration: 0.26 },
+            { note: 'B2', duration: 0.26 },
             { note: 'C#3', duration: 0.26 }
         ];
 
         // ترددات النوتات الموسيقية الأساسية
         const noteFreqs = {
-            'F#2': 92.50, 'B2': 123.47, 'C#3': 138.59, 'E3': 164.81, 'F#3': 185.00
+            'F#2': 92.50,
+            'B2': 123.47,
+            'C#3': 138.59,
+            'E3': 164.81,
+            'F#3': 185.00
         };
 
         function initAudio() {
             if (!audioCtx) {
-                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                audioCtx = new(window.AudioContext || window.webkitAudioContext)();
                 masterGain = audioCtx.createGain();
                 masterGain.gain.setValueAtTime(parseFloat(volumeSlider.value), audioCtx.currentTime);
                 masterGain.connect(audioCtx.destination);
@@ -777,20 +789,20 @@
 
         function playSynthNote(frequency, time, duration) {
             if (!audioCtx || audioCtx.state === 'suspended') return;
-            
+
             // مولد موجة البيز (Bass Synth)
             const osc = audioCtx.createOscillator();
             const noteGain = audioCtx.createGain();
-            
+
             osc.type = 'triangle'; // صوت بيز عميق
             osc.frequency.setValueAtTime(frequency, time);
-            
+
             noteGain.gain.setValueAtTime(0.25, time);
             noteGain.gain.exponentialRampToValueAtTime(0.01, time + duration - 0.02);
-            
+
             osc.connect(noteGain);
             noteGain.connect(masterGain);
-            
+
             osc.start(time);
             osc.stop(time + duration);
 
@@ -832,14 +844,14 @@
 
         function startMusicLoop() {
             if (!isMusicPlaying) return;
-            
+
             const currentItem = billieJeanBassLine[currentNoteIndex];
             const freq = noteFreqs[currentItem.note];
-            
+
             playSynthNote(freq, audioCtx.currentTime, currentItem.duration);
-            
+
             currentNoteIndex = (currentNoteIndex + 1) % billieJeanBassLine.length;
-            
+
             noteTimeout = setTimeout(startMusicLoop, currentItem.duration * 1000);
         }
 
@@ -913,16 +925,16 @@
                 const ctx = new AudioContext();
                 const osc = ctx.createOscillator();
                 const gain = ctx.createGain();
-                
+
                 osc.type = 'sine';
                 osc.frequency.setValueAtTime(frequency, ctx.currentTime);
-                
+
                 gain.gain.setValueAtTime(0.08, ctx.currentTime);
                 gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + duration);
-                
+
                 osc.connect(gain);
                 gain.connect(ctx.destination);
-                
+
                 osc.start();
                 osc.stop(ctx.currentTime + duration);
             } catch (e) {}
@@ -945,12 +957,12 @@
         // ----------------------------------------------------
         const cursor = document.getElementById('custom-cursor');
         const glow = document.getElementById('custom-cursor-glow');
-        
+
         if (cursor && glow) {
             document.addEventListener('mousemove', (e) => {
                 cursor.style.left = e.clientX + 'px';
                 cursor.style.top = e.clientY + 'px';
-                
+
                 glow.style.left = e.clientX + 'px';
                 glow.style.top = e.clientY + 'px';
             });
@@ -1071,13 +1083,13 @@
                 const rect = card.getBoundingClientRect();
                 const x = e.clientX - rect.left;
                 const y = e.clientY - rect.top;
-                
+
                 const centerX = rect.width / 2;
                 const centerY = rect.height / 2;
-                
+
                 const rotateX = ((y - centerY) / centerY) * -8;
                 const rotateY = ((x - centerX) / centerX) * 8;
-                
+
                 card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
                 if (card.classList.contains('animated-message-box')) {
                     card.style.boxShadow = `0 25px 50px rgba(212, 175, 55, 0.25), inset 0 0 20px rgba(212, 175, 55, 0.1)`;
@@ -1085,7 +1097,7 @@
                     card.style.boxShadow = `0 20px 40px rgba(212, 175, 55, 0.1)`;
                 }
             });
-            
+
             card.addEventListener('mouseleave', () => {
                 card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)`;
                 if (card.classList.contains('animated-message-box')) {
@@ -1137,7 +1149,7 @@
             const hours = now.getHours();
             const greetingEl = document.getElementById('dynamic-greeting');
             const footerMicrotext = document.getElementById('footer-microtext');
-            
+
             let message = '';
             let footerMsg = '';
 
@@ -1176,11 +1188,11 @@
         window.addEventListener('load', () => {
             const loaderBar = document.getElementById('loader-bar');
             const loaderScreen = document.getElementById('loader-screen');
-            
+
             if (loaderBar) {
                 loaderBar.style.width = '100%';
             }
-            
+
             setTimeout(() => {
                 if (loaderScreen) {
                     loaderScreen.style.opacity = '0';
@@ -1203,7 +1215,7 @@
         const closeModalBtn = document.getElementById('close-success-modal');
         const modalProgress = document.getElementById('modal-progress');
         const modalCountdown = document.getElementById('modal-countdown');
-        
+
         let isCooldownActive = false;
         let cooldownSeconds = 5;
         let cooldownTimer = null;
@@ -1211,17 +1223,17 @@
         if (contactForm) {
             contactForm.addEventListener('submit', (e) => {
                 e.preventDefault();
-                
+
                 if (isCooldownActive) return;
 
                 const name = document.getElementById('user-name').value;
                 const project = document.getElementById('user-project').value;
                 const message = document.getElementById('user-message').value;
-                
+
                 const text = `السلام عليكم يا ملك المونتاج، أنا ${name}. حابب استفسر بخصوص: ${project}. وتفاصيل طلبي كالتالي: ${message}`;
                 const encodedText = encodeURIComponent(text);
                 const whatsappUrl = `https://wa.me/201214044652?text=${encodedText}`;
-                
+
                 playClickSound(850, 0.2);
                 setTimeout(() => { playClickSound(1050, 0.25); }, 150);
 
@@ -1244,15 +1256,19 @@
                 submitBtn.disabled = true;
                 submitBtn.classList.remove('bg-luxuryGold', 'hover:bg-luxuryGoldHover');
                 submitBtn.classList.add('bg-gray-700', 'text-gray-400', 'cursor-not-allowed');
-                
+
                 cooldownSeconds = 5;
-                modalCountdown.textContent = currentLang === 'ar' ? `${cooldownSeconds} ثوانٍ متبقية` : `${cooldownSeconds} seconds left`;
-                submitBtn.innerHTML = `<span>${currentLang === 'ar' ? 'انتظر' : 'Wait'} (${cooldownSeconds}ث) ⏳</span>`;
+                modalCountdown.textContent = currentLang === 'ar' ? `${cooldownSeconds} ثوانٍ متبقية` :
+                    `${cooldownSeconds} seconds left`;
+                submitBtn.innerHTML =
+                    `<span>${currentLang === 'ar' ? 'انتظر' : 'Wait'} (${cooldownSeconds}ث) ⏳</span>`;
 
                 cooldownTimer = setInterval(() => {
                     cooldownSeconds--;
-                    modalCountdown.textContent = currentLang === 'ar' ? `${cooldownSeconds} ثوانٍ متبقية` : `${cooldownSeconds} seconds left`;
-                    submitBtn.innerHTML = `<span>${currentLang === 'ar' ? 'انتظر' : 'Wait'} (${cooldownSeconds}ث) ⏳</span>`;
+                    modalCountdown.textContent = currentLang === 'ar' ? `${cooldownSeconds} ثوانٍ متبقية` :
+                        `${cooldownSeconds} seconds left`;
+                    submitBtn.innerHTML =
+                        `<span>${currentLang === 'ar' ? 'انتظر' : 'Wait'} (${cooldownSeconds}ث) ⏳</span>`;
 
                     if (cooldownSeconds <= 0) {
                         clearInterval(cooldownTimer);
@@ -1260,8 +1276,10 @@
                         submitBtn.disabled = false;
                         submitBtn.classList.remove('bg-gray-700', 'text-gray-400', 'cursor-not-allowed');
                         submitBtn.classList.add('bg-luxuryGold', 'hover:bg-luxuryGoldHover');
-                        submitBtn.innerHTML = `<span>${currentLang === 'ar' ? 'إرسال عبر الواتس' : 'Send via WhatsApp'}</span><i class="fa-solid fa-paper-plane"></i>`;
-                        modalCountdown.textContent = currentLang === 'ar' ? "يمكنك الإرسال مجدداً الآن!" : "You can submit again!";
+                        submitBtn.innerHTML =
+                            `<span>${currentLang === 'ar' ? 'إرسال عبر الواتس' : 'Send via WhatsApp'}</span><i class="fa-solid fa-paper-plane"></i>`;
+                        modalCountdown.textContent = currentLang === 'ar' ? "يمكنك الإرسال مجدداً الآن!" :
+                            "You can submit again!";
                         modalProgress.style.transition = 'none';
                         modalProgress.style.width = '0%';
                     }
@@ -1336,7 +1354,7 @@
 
         function handleScrollReveal() {
             const triggerBottom = window.innerHeight * 0.85;
-            
+
             revealElements.forEach(el => {
                 const elTop = el.getBoundingClientRect().top;
                 if (elTop < triggerBottom) {
@@ -1355,7 +1373,7 @@
             let start = 0;
             const stepTime = Math.abs(Math.floor(duration / target));
             const element = document.getElementById(elementId);
-            
+
             const timer = setInterval(() => {
                 start += Math.ceil(target / 100);
                 if (start >= target) {
@@ -1371,13 +1389,13 @@
             animateCounter(baseVisitors, 1500, 'visitor-count');
 
             setInterval(() => {
-                const currentVal = parseInt(document.getElementById('visitor-count').textContent.replace(/,/g, ''));
+                const currentVal = parseInt(document.getElementById('visitor-count').textContent.replace(/,/g,
+                    ''));
                 const addedVal = Math.floor(Math.random() * 5) + 1;
-                document.getElementById('visitor-count').textContent = (currentVal + addedVal).toLocaleString('en-US');
+                document.getElementById('visitor-count').textContent = (currentVal + addedVal).toLocaleString(
+                'en-US');
             }, 4000);
         });
     </script>
 </body>
 </html>
-
-```
